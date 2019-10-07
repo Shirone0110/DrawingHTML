@@ -1,0 +1,58 @@
+body
+{
+    font-size: 20px;
+    font-family: cursive;
+}
+
+h1
+{
+    text-align: center;
+    text-transform: uppercase;
+    color: red;
+}
+
+#intro
+{
+    background-color: #ffffb3;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#select
+{
+    background-color: #e6ff99;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#append
+{
+    background-color: #ccff99;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#text
+{
+    background-color: #b3ffb3;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#style
+{
+    background-color: #b3ffe0;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#example
+{
+    background-color: #adebeb;
+    padding: 10px;
+}

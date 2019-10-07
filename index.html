@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v5.min.js"> </script>
+        <link href="styles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Drawing HTML</h1>
+        <section id="intro">
+            In this chapter we learned how to create page elements that contains data from a particular source. This page will explain how <code>select()</code>, <code>append()</code>, <code>text()</code>, and <code>style()</code> commands work.
+        </section>
+        <section id="select">
+            <h3>select()</h3>
+            The <code>select()</code> function takes a CSS selector and returns the first element matches that selector. For example:
+            <pre>
+                <code>&lt;h1&gt;Header&lt;/h1&gt;</code>
+                &lt;p id = "p1"&gt;Paragraph 1&lt;/p&gt;
+                &lt;p id = "p2"&gt;Paragraph 2&lt;/p&gt;
+            </pre>
+            <code>d3.select("h1")</code> will return h1 element Header, <code>d3.select("#h2")</code> will return p element Paragraph 2, <code>d3.select("p"</code> will return p element Paragraph 1.
+        </section>
+        <section id="append">
+            <h3>append()</h3>
+            The <code>append()</code> function takes an element type and add it to the end of whatever it's acting on. For example
+            <pre>
+                var body = d3.select("body");
+                body.append("p");
+            </pre>
+            will turn 
+            <pre>
+                &lt;body&gt;
+                    &lt;h1&gt;Header&lt;/h1&gt;
+                &lt;/body&gt;
+            </pre>
+            into 
+            <pre>
+                &lt;body&gt;
+                    &lt;h1&gt;Header&lt;/h1&gt;
+                    &lt;p&gt;&lt;/p&gt;
+                &lt;/body&gt;
+            </pre>
+        </section>
+        <section id="text">
+            <h3>text()</h3>
+            The <code>text()</code> function takes a string and set to the value between the opening and closing tags of whatever it's acting on. For example
+            <pre>
+                var p = d3.select("p");
+                p.text("Hello World");
+            </pre>
+            will turn
+            <pre>
+                &lt;p&gt;Paragraph&lt;/p&gt;
+            </pre>
+            into
+            <pre>
+                &lt;p&gt;Hello World&lt;/p&gt;
+            </pre>
+            When saying "set the value between the opening and closing tags", it means replace everything with the new value, not adding more to it. For example
+            <pre>
+                var p = d3.select("p");
+                p.text("Hello World");
+                p.text("Hi");
+            </pre>
+            will result in
+            <pre>
+                &lt;p&gt;Hi&lt;/p&gt;
+            </pre>
+        </section>
+        <section id="style">
+            <h3>style()</h3>
+            The <code>style()</code> function sets CSS properties to whatever it's acting on. For example
+            <pre>
+                d3.select("a").style("text-decoration", "none");
+            </pre>
+            will get rid of the underline in links.
+        </section>
+        <section id="example">
+            <script>
+                var body = d3.select("#example");
+                body.append("h3").text("Example");
+                body.append("p").text("This paragraph is created by javascript");
+                body.append("p").text("This too").style("color", "red");
+            </script>
+            The elements in the Example section above is the result of
+            <pre>
+                var body = d3.select("#example");
+                body.append("h3").text("Example");
+                body.append("p").text("This paragraph is created by javascript");
+                body.append("p").text("This too").style("color", "red");
+            </pre>
+        </section>
+    </body>
+</html>
